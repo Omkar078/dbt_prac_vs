@@ -33,6 +33,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbt_prac_vs:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    marts:
+      core:
+        +materialized: table
+    staging:
+      jaffle_shop:
+        +materialized: view
+      stripe:
+        +materialized: view
+    
+
+
